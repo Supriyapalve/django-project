@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+{%extends 'base.html'%}
+{%load static%}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="{%static 'css/ipo.css'%}">
+</head>
+<body>
+{%block baseblock%}
+{% if obj %}
+<h1 align="center" >IPO HOLDERS LIST</h1>
+<br>
+<br>
+<table align="center" border="1" style="width: 60%">
+    <thead style=" background-color: #1c87c9;color: #ffffff;">
+        <th>NAME</th>
+         <th>CITY</th>
+         <th>DOB</th>
+         <th>PROFESSION</th>
+        <th>IPO AMOUNT</th>
+         <th>CONTACT NO.</th>
+
+    </thead>
+
+    {% for d in obj %}
+    <tr>
+        <td>{{d.name}}</td>
+        <td>{{d.city}}</td>
+        <td>{{d.DOB}}</td>
+        <td>{{d.profession}}</td>
+        <td>{{d.ipoamount}}</td>
+        <td>{{d.contact_no}}</td>
+    </tr>
+    {%endfor%}
+    </table>
+{% else %}
+<h1> no record found </h1>
+    {% endif %}
+{%endblock%}
+</body>
+</html>

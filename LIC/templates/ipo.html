@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+{%extends 'base.html'%}
+{%load static%}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title
+         <link rel="stylesheet" href="{% static 'css/ipo.css' %}">
+    <!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+</head>
+<body>
+{% block baseblock %}
+        <img src="{%static 'images/ipo.png'%}" class="center" style="border: 1px solid #ddd;border-radius: 6px;padding: 5px;width: 200px;display: block;
+  margin-left: auto;
+  margin-right: auto;">
+<div class="container" align="center" >
+<h1 align="center">LIC IPO REGISTRATION</h1>
+
+        <form method="POST">
+        {{form.as_p}}
+            {%csrf_token%}
+        <input type="submit" value="submit" name="submit" >
+    </form>
+        </div>
+{%endblock%}
+</body>
+</html>
